@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  nodejs:
+    container_name: "rint-intl-api"
+    image: node:16-buster-slim
+    restart: always
+    working_dir: /api
+    volumes:
+      - ./:/api
+    command: bash -c "npm run build && npm run start"
+
+    ports:
+      - 8888:3000
+
+networks:
+  default:
+    external:
+      name: api

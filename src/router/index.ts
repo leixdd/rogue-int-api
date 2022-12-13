@@ -1,10 +1,6 @@
 import express, { Request, Response } from 'express';
-import { IResponse } from '../contracts/IResponse';
 const querystring = require("querystring");
-const { Curl, curly } = require("node-libcurl");
-import {Readable, pipeline, PassThrough} from  'stream';
 import { createWriteStream, unlinkSync, readFileSync } from 'fs';
-import http from 'http';
 import https from 'https';
 import path from 'path';
 import { IncomingHttpHeaders } from 'http2';
